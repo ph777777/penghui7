@@ -1,0 +1,22 @@
+2024-01-07 22:12:48.581  INFO 6900 --- [           main] com.example.CookingApplication           : Starting CookingApplication on DESKTOP-UM3TDB6 with PID 6900 (E:\Idea_workspace\chaotu2\target\classes started by ≈ÌÍÕ in E:\Idea_workspace\chaotu2)
+2024-01-07 22:12:48.596  INFO 6900 --- [           main] com.example.CookingApplication           : No active profile set, falling back to default profiles: default
+2024-01-07 22:12:50.658  WARN 6900 --- [           main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.example.mapper.Common]' package. Please check your configuration.
+2024-01-07 22:12:52.283  INFO 6900 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2024-01-07 22:12:52.330  INFO 6900 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Initializing ProtocolHandler ["http-nio-8081"]
+2024-01-07 22:12:52.361  INFO 6900 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-01-07 22:12:52.361  INFO 6900 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.21]
+2024-01-07 22:12:52.470  INFO 6900 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-01-07 22:12:52.470  INFO 6900 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3686 ms
+2024-01-07 22:12:52.751  INFO 6900 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.example.db.DBpool.jdbcDriver
+2024-01-07 22:12:52.751  INFO 6900 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.example.db.DBpool.jdbcUrl
+2024-01-07 22:12:52.751  INFO 6900 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.example.db.DBpool.userName
+2024-01-07 22:12:52.751  INFO 6900 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static java.lang.String com.example.db.DBpool.password
+2024-01-07 22:12:52.751  INFO 6900 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static int com.example.db.DBpool.initCount
+2024-01-07 22:12:52.751  INFO 6900 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static int com.example.db.DBpool.stepSize
+2024-01-07 22:12:52.751  INFO 6900 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static fields: private static int com.example.db.DBpool.poolMaxSize
+2024-01-07 22:12:52.751  INFO 6900 --- [           main] f.a.AutowiredAnnotationBeanPostProcessor : Autowired annotation is not supported on static methods: public static void com.example.db.DBpool.setJdbcDriver(java.lang.String)
+2024-01-07 22:12:52.970  INFO 6900 --- [           main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2024-01-07 22:12:53.189  INFO 6900 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-01-07 22:12:53.533  INFO 6900 --- [           main] o.a.coyote.http11.Http11NioProtocol      : Starting ProtocolHandler ["http-nio-8081"]
+2024-01-07 22:12:53.564  INFO 6900 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2024-01-07 22:12:53.564  INFO 6900 --- [           main] com.example.CookingApplication           : Started CookingApplication in 7.026 seconds (JVM running for 9.925)

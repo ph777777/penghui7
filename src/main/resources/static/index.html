@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+
+    <style>
+        body{
+            background: url(pictures/background.jpg);
+            /* 设置背景铺满 */
+            background-repeat:no-repeat;
+            background-size:100%;
+
+        }
+        form{
+            /* 设置form大小 */
+            width: 400px;
+            height: 250px;
+
+            /* 加个背景颜色 */
+            background-color: #E1E9EF;
+            background: url(pictures/DL.jpg);
+
+            /* 设置透明度 */
+            opacity: 90%;
+
+            text-align: center;
+            /* 再设置内边距 使得内容更偏向于中央位置 */
+            /* 上方，下方内边距为120px 与 左边与右边均为100px 按照逆时针 */
+            /* 但是会撑大盒子 */
+            padding: 120px 100px;
+
+            /* 设置文本文字的大小 */
+            font-size: 18px;
+
+            /* 添加圆角边框 */
+            border-radius: 10px;
+
+            /* 增加外边距 */
+            /* 上下120px 然后左右居中 */
+            margin: 120px auto;
+        }
+
+        .textinput{
+            /* 设置宽高 */
+            height: 40px;
+            width: 300px;
+
+            /* 设置内边距 */
+            padding: 0 35px;
+
+            /* 去除边框 */
+            border: none;
+
+            /* 设置背景颜色 */
+            background: #F8F9F9;
+
+            /* 设置字体大小 */
+            font-size: 15px;
+
+            /* 给文本框加上阴影 */
+            box-shadow: 0px 1px 1px rgba(255, 255, 255, 0.7), inset 0px 2px 5px #aaaaaa;
+
+            /* 给文本框加上圆角边框 */
+            border-radius: 5px;
+
+            /* 给文本框中输入文字加上颜色 */
+            color: saddlebrown;
+        }
+
+        /* 筛选input标签中 type为"submit"的 进行渲染*/
+        input[type="submit"]{
+            /* 设置宽高 */
+            width: 110px;
+            height: 40px;
+
+            /* 内部文本居中 */
+            text-align: center;
+
+            /* 圆角边框 */
+            border-radius: 5px;
+
+            /* 设置字体 */
+            font:16px "黑体";
+
+            /* 设置背景颜色 */
+            background-color: #C0C6CB;
+        }
+        a {
+            /* 去除下划线 */
+            text-decoration: none;
+        }
+
+        a:hover {
+            /* 悬空的时候有被选中的样子 出现下划线*/
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+<body>
+<form>
+    <p>用户名<br />
+        <input type="text" class="username" placeholder="请输入用户名" />
+    </p>
+    <p>密码<br />
+        <input type="password" class="password" placeholder="请输入密码" />
+    </p>
+    <p>
+        <input id="remember" type="checkbox" /><label for="smtxt">记住密码</label>
+    </p>
+    <p>
+        <input type="submit" value="登录" />
+    </p>
+    <p class="smtxt">还没有账户？<a href="signin.html">注册</a></a>
+
+    </p>
+</form>
+<script>
+    //1.获取元素
+    var loginForm = document.querySelector('form')
+    var nameInp = document.querySelector('.username')
+    var pwdInp = document.querySelector('.password')
+    var checkbox = document.querySelector('.checkbox')
+    var errBox = document.querySelector('.error')
+    //1. 给form 绑定一个表单提交事件
+    loginForm.onsubmit = function(e) {
+        //注意：要阻止表单的默认提交行为
+        e.preventDefault()
+        //2. 拿到用户填写的用户名和密码
+        var name = nameInp.value
+        var pwd = pwdInp.value
+        //2-2. 验证用户名和密码
+        // if(!name || !pwd) return alert('请填写账号密码')
+        if (!name) return alert('请填写账号！')
+        if (!pwd) return alert('请填写密码！')
+        //3. 发送ajax请求
+        var xhr = new XMLHttpRequest()
+        xhr.open('POST', 'http://localhost:8081/login', true)
+        xhr.onload = function() {
+            //返回json格式，需要解析
+            console.log(JSON.parse(xhr.responseText))
+
+            var data = xhr.responseText;
+            var obj = JSON.parse(data);
+            var obj1 = eval("("+data+")");
+            console.log(obj.login);
+
+            //进行条件判断
+            if (xhr.readyState==4&&xhr.status==200 ) {
+                //登录成功
+                console.log("obj.login:"+obj.login);
+                window.location.href = './homePage.html'
+            } else {
+                //登录失败
+                //errBox.style.display = 'block'
+            }
+        }
+        xhr.setRequestHeader('content-type', 'application/x-www-form-urlencoded')
+        xhr.send('username=' + name + '&password=' + pwd)
+        console.log(name, pwd)
+    }
+</script>
+</body>
+</html>
